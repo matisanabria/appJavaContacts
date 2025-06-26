@@ -25,5 +25,12 @@ bin/
 ### VS Code ###
 .vscode/
 
+# Datos de contactos
+contactos.json
+
+# Librerías externas
+*.jar
+lib/
+
 ### Mac OS ###
 .DS_Store
