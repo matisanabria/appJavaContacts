@@ -46,7 +46,7 @@ public class ContactManager {
             System.out.println("\n\n📒 Contactos");
             System.out.println("==============================\n");
             for (int i = 0; i < contactos.size(); i++) {
-                System.out.println(i + ". " + contactos.get(i));
+                System.out.println((i + 1) + ". " + contactos.get(i));
             }
             System.out.println("\n==============================");
             System.out.println("Escribe número de indice para ver detalles. \n-1. Salir");
@@ -89,6 +89,10 @@ public class ContactManager {
             if (email.equalsIgnoreCase("exit")) {
                 System.out.println("❌ Agregar cancelado.");
                 return;
+            }
+            if (!email.contains("@")) {
+                System.out.println("❌ Email inválido.");
+                continue;
             }
 
             if (nombre.isEmpty() || numero.isEmpty() || email.isEmpty()) {
