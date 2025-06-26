@@ -6,9 +6,9 @@ public class ContactManager {
     private Scanner scanner;
 
     public ContactManager() {
-        contactos = new ArrayList<>();
+        contactos = JsonHandler.loadFromJson();
         scanner = new Scanner(System.in);
-        contactos.add(new Contact("Mati", "0981000000", "mati@email.com"));}
+    }
 
     public void start() {
         byte opt;
@@ -102,6 +102,7 @@ public class ContactManager {
                 // Crear contacto y agregar a la lista
                 Contact nuevo = new Contact(nombre, numero, email);
                 contactos.add(nuevo);
+                JsonHandler.saveToJson(contactos);
 
                 System.out.println("✅ Contacto agregado: " + nuevo);
                 return;
@@ -131,6 +132,7 @@ public class ContactManager {
             }
             else if (index >= 0 && index < contactos.size()) {
                 Contact eliminado=contactos.remove(index);
+                JsonHandler.saveToJson(contactos);
                 System.out.println("🗑 Contacto borrado: " + eliminado);
                 pause(2000);
                 return;
