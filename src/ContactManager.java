@@ -13,13 +13,13 @@ public class ContactManager {
     public void start() {
         byte opt;
         do {
-            menu();
+            showMenu();
             opt = scanner.nextByte();
 
             switch (opt){
-                case 1 -> contacts();
-                case 2 -> agg();
-                case 3 -> borrar();
+                case 1 -> listContacts();
+                case 2 -> addContact();
+                case 3 -> deleteContact();
                 case 0 -> System.out.println("\n\n✌ Cerrando app contactos.");
                 default -> System.out.println("❌ Opción inválida");
             }
@@ -28,13 +28,13 @@ public class ContactManager {
     }
 
 
-    public void menu(){
+    public void showMenu(){
         System.out.println("📱 ContactApp");
         System.out.println("\n1. Ver contactos\n2. Agregar\n3. Borrar\n0. Salir\n");
         System.out.print("-> ");
     }
 
-    public void contacts(){
+    public void listContacts(){
         byte index=0; // Suponiendo que no tenga más de 127 contactos, usemos byte para index
         if(contactos.isEmpty()){
             System.out.println("No hay contactos para mostrar.");
@@ -55,7 +55,7 @@ public class ContactManager {
             // Imprime contacto si está en el rango
             if ( index>=0 && index<contactos.size()){
                 System.out.println(contactos.get(index).detalles());
-                sleep(3000);
+                pause(3000);
             }
             else if (index==-1) { // Sale del menú
                 System.out.println("\n\n");
@@ -66,7 +66,7 @@ public class ContactManager {
         }while(index!=-1);
     }
 
-    public void agg(){
+    public void addContact(){
         String nombre, numero, email;
         do {
             System.out.println("\n\n🟩 Agregar contacto.\nEscriba \"exit\" para salir.\n");
@@ -105,7 +105,7 @@ public class ContactManager {
         }while(true);
     }
 
-    public void borrar(){
+    public void deleteContact(){
         if(contactos.isEmpty()){
             System.out.println("No hay contactos para mostrar.");
             return;
@@ -122,22 +122,22 @@ public class ContactManager {
             index = scanner.nextByte();
             if (index == -1) {
                 System.out.println("❌ Cancelando.");
-                sleep(500);
+                pause(500);
                 return;
             }
             else if (index >= 0 && index < contactos.size()) {
                 Contact eliminado=contactos.remove(index);
                 System.out.println("🗑 Contacto borrado: " + eliminado);
-                sleep(2000);
+                pause(2000);
                 return;
             } else {
                 System.out.println("\n❌ Índice inválido");
-                sleep(1000);
+                pause(1000);
             }
         }while(true);
     }
 
-    public void sleep(int tiempo){
+    public void pause(int tiempo){
         try{
             Thread.sleep((tiempo)); // El tiempo está en ms. (1000ms -> 1s)
         }catch(InterruptedException e){
