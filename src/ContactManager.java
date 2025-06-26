@@ -73,20 +73,20 @@ public class ContactManager {
 
             System.out.print("Ingrese nombre: ");
             nombre = scanner.next();
-            if (nombre.equals("exit")) { // Si user ingresa "exit", terminar.
+            if (nombre.equalsIgnoreCase("exit")) { // Si user ingresa "exit", terminar.
                 System.out.println("❌ Agregar cancelado.");
                 return;
             }
             System.out.print("Ingrese número: ");
             numero = scanner.next();
-            if (numero.equals("exit")) {
+            if (numero.equalsIgnoreCase("exit")) {
                 System.out.println("❌ Agregar cancelado.");
                 return;
             }
 
             System.out.print("Ingrese email: ");
             email = scanner.next();
-            if (email.equals("exit")) {
+            if (email.equalsIgnoreCase("exit")) {
                 System.out.println("❌ Agregar cancelado.");
                 return;
             }
