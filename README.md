@@ -17,8 +17,8 @@ Aplicación simple de gestión de contactos hecha en Java, con persistencia de d
 
 ## 📸 Captura
 
-![screenshot]([https://i.imgur.com/TUIM9MM.png](https://imgur.com/a/r691hyQ))  
-![screenshot](https://imgur.com/a/tLAPzQK)
+![screenshot](https://i.imgur.com/2U9GW7A.png)  
+![screenshot](https://i.imgur.com/akZGYBi.png)
 
 ---
 
