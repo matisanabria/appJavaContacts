@@ -6,23 +6,7 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        byte opt=0;
-        contactos.add(new Contact("Mati","0981000000", "mati@email.com"));
-
-        do {
-            menu(); // Aquí solo imprimimos el menú.
-            opt=scanner.nextByte(); // Pedimos al usuario que elija la opción.
-
-            switch (opt){
-                case 1: contacts(); break;
-                case 2: agg(); break;
-                case 3: borrar(); break;
-                default:
-                    System.out.println("❌ Opción inválida");
-            }
-
-        }while(opt!=0);
-
+        new ContactManager().start();
         System.out.println("\n\n✌ Cerrando app contactos."); // Mensaje al terminar programa
         scanner.close();
 
