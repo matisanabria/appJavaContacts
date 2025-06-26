@@ -28,7 +28,7 @@ public class ContactManager {
     }
 
 
-    public void showMenu(){
+    private void showMenu(){
         System.out.println("📱 ContactApp");
         System.out.println("\n1. Ver contactos\n2. Agregar\n3. Borrar\n0. Salir\n");
         System.out.print("-> ");
@@ -137,7 +137,7 @@ public class ContactManager {
         }while(true);
     }
 
-    public void pause(int tiempo){
+    private void pause(int tiempo){
         try{
             Thread.sleep((tiempo)); // El tiempo está en ms. (1000ms -> 1s)
         }catch(InterruptedException e){
