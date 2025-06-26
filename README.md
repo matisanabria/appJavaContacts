@@ -55,4 +55,4 @@ Aplicación simple de gestión de contactos hecha en Java, con persistencia de d
 1. Cloná el repositorio:
 
 ```bash
-git clone https://github.com/matisanabria/appJavaContacts.git
+git clone https://github.com/matisanabria/ContactApp.git
