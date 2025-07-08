@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
@@ -34,3 +35,37 @@ lib/
 
 ### Mac OS ###
 .DS_Store
+=======
+# Archivos de IntelliJ IDEA
+.idea/
+*.iml
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Carpetas de compilación y salida
+/out/
+/target/
+
+# Archivos de logs
+*.log
+
+# Configuración de ejecución
+*.iws
+*.ipr
+
+# Archivos personales o sensibles
+*.env
+*.keystore
+
+# Maven
+/logs/
+*.class
+*.jar
+*.war
+*.ear
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+>>>>>>> Stashed changes
